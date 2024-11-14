@@ -20,15 +20,14 @@ public class Main {
         List<String> listOfWords = new ArrayList<>();
         Path path = readFileOfWords();
         fillListOfWOrds(listOfWords, path);
-        String secretWord = getRandomWord(listOfWords);
-        Set<String> enteredLettersSet = new HashSet<>();
-
-        String[] secretWordArray = new String[secretWord.length()];
-        Arrays.fill(secretWordArray, "_");
 
         System.out.println("Welcome!");
 
         while (true) {
+            String secretWord = getRandomWord(listOfWords);
+            String[] secretWordArray = new String[secretWord.length()];
+            Arrays.fill(secretWordArray, "_");
+            Set<String> enteredLettersSet = new HashSet<>();
             printGreetings();
             int errorCounter = 0;
             int numOfVariantGame = scanner.nextInt();
